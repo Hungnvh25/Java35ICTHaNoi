@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        .group{
+            margin: 100px auto;
+            background-color: aqua;
+            border-radius: 50%;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .item1{
+            background-color: #219653;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 120px;
+            left: 30px;            
+        }
+        .item2{
+            background-color: #EB5757;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            float: left;
+            position: absolute;
+            bottom: 120px;
+            right: 30px;        
+
+        }
+        .item3{
+            background-color: #F2994A;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute; 
+            bottom: 17px;           
+        }
+
+        .item{
+            transform: translate(0px,0px);
+
+        }
+    </style>
+
+    <div class="group">
+        <div class="item1 item"></div>
+        <div class="item2 item" ></div>
+        <div class="item3"></div>
+    </div>
+</body>
+</html>

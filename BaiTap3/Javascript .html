@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+        let a = [5,3,1,8,9,6,7,2,4,10,12];
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] % 2 == 0) {
+                sum++;
+            }
+        }
+        console.log(sum + ': Chẵn');
+        console.log(a.length - sum + ': Lẻ');
+
+
+        for(let i = 0; i<a.length-1;i++){
+            for(let j = 0 ; j<a.length;j++){
+                if(a[j] > a[j+1]){
+                    let c = a[j]
+                    a[j] = a[j+1] 
+                    a[j+1] = c
+                    
+                }
+            }
+
+        }
+
+        console.log(a)
+
+        console.log(Date())
+
+</script>
+</html>
