@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .group{
+        width: 400px;
+        height: 400px;
+        margin: 50px auto;
+        border-radius: 999px;
+        border: 40px solid yellow;
+        position: relative;
+    }
+    .row .item{
+        width: 150px;
+        height: 80px;
+        background-color: #F2994A;
+        border-radius: 999px;
+        display: inline-block;
+    }
+
+    .col .item{
+        width: 80px;
+        height: 150px;
+        background-color: #F2994A;
+        border-radius: 999px;
+        margin: 60px 0;
+    }
+
+    .row{
+        position: absolute;
+        left: 55px;
+        top: 160px;
+    }
+    .col{
+        position: absolute;
+        left: 168px;
+        top: -40px;
+    }
+
+
+
+
+</style>
+<body>
+    
+    <div class="group">
+        <div class="row">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+
+        <div class="col">
+            <div class="item col1"></div>
+            <div class="item col1"></div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

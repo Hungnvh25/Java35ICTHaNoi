@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+    <style>
+        .form {
+            width: 500px;
+            height: 600px;
+            margin: 100px auto;
+            background-color: rgb(223, 217, 217);
+            border-radius: 10px;
+        }
+
+        .title{
+            margin-top: 100px;
+            text-align: center;
+        }
+
+       label{
+            display: block;
+            margin-bottom: 5px;
+       } 
+       
+       input{
+            padding: 5px;
+            width: 300px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+       }
+
+       .signUp{
+            margin-left: 100px;
+       }
+
+       .button{
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+       }
+
+       span{
+            color: red;
+            display: block;
+            margin-bottom: 10px;
+       }
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <div>
+            <div class="title">
+                <h3>SignUp</h3>
+            </div>
+            <div class="signUp">
+                <div>
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text">
+                    <span></span>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" type="password">
+                    <span></span>
+                </div>
+                
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" type="email">
+                    <span></span>
+                </div>
+                
+                <div>
+                    <label for="fullName">FullName</label>
+                    <input id="fullName" type="text">
+                    <span></span>
+                </div>
+            </div>
+            <div  class="button">
+                <button onclick="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    function checkLen(a){
+        const len = a.length;
+        if(len == 0){
+
+            return 0;
+        }
+        else if(len > 5 && len < 10)
+        {
+            return 1;
+        }
+
+
+        return 2;
+    }
+
+    
+    function submit(){
+        const i = document.querySelectorAll('input');
+        const c = document.querySelectorAll('span')
+        for(let j=0;j<i.length;j++){
+            let len  = i[j].value.trim();
+            if(checkLen(len) == 0){
+                c[j].innerText = 'Vui lòng điền vào trường này';
+            }
+            else if(checkLen(len) == 2){
+                
+                c[j].innerText = 'Vui lòng điền từ 5 -> 10 ký tự';
+                
+            }
+            else if(checkLen(len) == 1 && !i[2].value.trim().includes('@')){
+                c[2].innerText = 'Vui lòng nhập đúng định dạng Email';   
+            }
+            else{
+                c[j].innerText = '';
+            }
+
+
+        }
+
+    }
+
+
+</script>
+</html>

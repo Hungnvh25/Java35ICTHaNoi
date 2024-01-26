@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+		<p>This is paragraph 1</p>
+		<p>This is paragraph 2</p>
+		<p>This is paragraph 3</p>
+		<p>This is paragraph 4</p>
+	</div>
+
+	<div id="copy-wrapper">
+
+	</div>
+    <p></p>
+	<button onclick="copy()" id="btn">Copy</button >
+
+</body>
+
+<script>
+    function copy(){
+        const a = document.querySelectorAll('p')
+
+        const b = document.querySelector('#wrapper')
+        const c = document.querySelector('#copy-wrapper')
+
+        let d = '';
+        for(let i = 0; i<a.length;i++){
+            d += '<p>'+a[i].innerText+'</p>'
+        }
+        c.innerHTML = d
+    }
+</script>
+</html>

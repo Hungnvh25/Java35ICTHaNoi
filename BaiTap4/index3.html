@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 700px;
+            margin: 100px auto;
+            background-color: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row  :first-child{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+
+        .row  :last-child{
+            background-color: rgb(60, 0, 255);
+            width: 300px;
+            height: 100px;
+            float: left;
+            margin-left: 30px;
+        }
+
+        .item{
+            display: inline-block;
+        }
+        .item1{
+            margin: 50px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="row">
+                <div class="item">1</div>
+                <div class="item"></div>
+            </div>
+            <div class="row">
+                <div class="item item1">2</div>
+                <div class="item item1"></div>
+            </div>
+            <div class="row">
+                <div class="item">3</div>
+                <div class="item"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
