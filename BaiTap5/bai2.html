@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conten {
+            position: relative;
+        }
+
+        .conten img {
+            width: 600px;
+            height: 500px;
+            position: absolute;
+        }
+
+        button {
+            padding: 20px;
+            list-style-type: none;
+            background-color: aqua;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <button onclick="moveLeft()">left</button>
+        <button onclick="moveRight()">right</button>
+    </ul>
+    <div class="conten">
+        <div class="item 0">
+            <img src="img/backiee-181377.jpg" alt="">
+        </div>
+
+        <div class="item 1">
+            <img src="img/backiee-186769.jpg" alt="">
+        </div>
+
+        <div class="item 2">
+            <img src="img/backiee-196720.jpg" alt="">
+        </div>
+
+        <div class="item 3">
+            <img src="img/backiee-250086.jpg" alt="">
+        </div>
+
+        <div class="item 4">
+            <img src="img/backiee-253980.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        const conten = document.querySelector('.conten');
+        const list_items = document.querySelectorAll('.item');
+        let indexNode = list_items.length - 1;
+
+        function convertitem(item1, item2) {
+            let copyitemHTML = item1.innerHTML;
+            let copyitemClass = item1.className;
+
+            item1.innerHTML = item2.innerHTML;
+            item1.className = item2.className;
+
+            item2.innerHTML = copyitemHTML;
+            item2.className = copyitemClass;
+        }
+
+
+        function moveLeft() {
+            for(let i = 0;i < list_items.length - 1;i++){
+                convertitem(list_items[indexNode],list_items[indexNode-1])
+                
+                indexNode--;
+            }
+            indexNode = list_items.length - 1;
+        }
+
+        function moveRight() {
+            indexNode = 0;
+            for(let i = 0;i < list_items.length - 1;i++){
+                convertitem(list_items[indexNode],list_items[indexNode+1])
+                indexNode++;     
+            }
+            indexNode = list_items.length - 1;
+        }
+    </script>
+</body>
+</html>
