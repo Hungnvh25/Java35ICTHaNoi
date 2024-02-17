@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function ChuVietHoa(str){
+        return str[0];
+    }
+
+    let str = prompt("Nhập chuỗi: ");
+
+    let result = [];
+
+    let escape = '@#!{}[]()';
+    
+    let strDele = [];
+    for(let i = 0 ;i< str.length;i++){
+        if(!escape.includes(str[i])){
+            strDele.push(str[i])
+        }
+    }
+    let strCopy = strDele.join("");
+
+
+    for(let i =0 ; i<strCopy.length -1 ;i++){
+        if(strCopy[i] !== ' ' && strCopy[i+1] != ' ' ){
+            let itemStr = '';
+            for(let y = i ; y < strCopy.length ; y++){
+                i = y;
+                if(strCopy[y] == ' '){
+                    break;
+                }
+                itemStr+=strCopy[y]
+
+            }
+            itemStr = itemStr.slice(0,1).toUpperCase() + itemStr.slice(1).toLowerCase();
+            result.unshift(itemStr);
+        } 
+    }
+    
+
+
+
+
+    console.log(result)
+</script>
+</html>

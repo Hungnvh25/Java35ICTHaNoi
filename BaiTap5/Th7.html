@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function facto(n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * facto(n - 1);
+        }
+    } 
+
+    function isNguyenTo(number){
+        if(number < 2){
+            return 0;
+        }
+        else if(number == 2){
+            return 1;
+        }
+        else{
+            for(let i = 2; i <= Math.sqrt(number); i++){
+                if(number % i == 0){
+                    return 0;
+                }
+            }
+        }
+        
+        return 1;
+    }
+
+    var arr = [10,5,2,5,6,7,8,9];
+    function sumArr(arr){
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+        console.log('Tổng mảng : ' + sum);
+        setTimeout(function() {
+            GiaiThua(arr);
+        }, 4000);
+    }
+
+    function GiaiThua(arr){
+        console.log('Giai thừa của các số : ')
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i] + "! = " + facto(arr[i]));
+        }
+
+        setTimeout(function() {soNguyenTo(arr)},3000)
+    }
+
+
+    function soNguyenTo(arr){
+        console.log('Các số nguyên tố:');
+        for (let i = 0; i < arr.length; i++) {
+            if(isNguyenTo(arr[i])){
+                console.log(arr[i])
+            }
+        }
+
+        setTimeout(function() {chiaHetCho3(arr)},3000)
+    }
+
+    
+    function chiaHetCho3(arr){
+        console.log('Các số Chia hết cho 3:');
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]%3==0){
+                console.log(arr[i])
+            }
+        }
+
+    }
+
+    setTimeout(function() {sumArr(arr)}, 3000);
+</script>
+</html>

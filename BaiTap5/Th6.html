@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    function soNguyenTo(number){
+        if(number < 2){
+            return 0;
+        }
+        else if(number == 2){
+            return 1;
+        }
+        else{
+            for(let i = 2; i <= Math.sqrt(number); i++){
+                if(number % i == 0){
+                    return 0;
+                }
+            }
+        }
+        
+        return 1;
+    }
+
+
+    function isSoNguyenTo(){
+        let number = Math.floor(Math.random() * 100)+1;
+        
+        if(soNguyenTo(number)){
+            console.log('Số '+ number + ' là số nguyên tố')
+        }
+        else{
+            console.log('Số '+ number + ' không là số nguyên tố')
+        }
+    }
+
+    setInterval(isSoNguyenTo,2000)
+</script>
+</html>

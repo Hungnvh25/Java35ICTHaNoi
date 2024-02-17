@@ -25,8 +25,8 @@
 </head>
 <body>
     <ul>
-        <button onclick="moveleft()">left</button>
-        <button onclick="moveright()">right</button>
+        <button onclick="moveLeft()">left</button>
+        <button onclick="moveRight()">right</button>
     </ul>
     <div class="conten">
         <div class="item 0">
@@ -51,35 +51,39 @@
     </div>
 
     <script>
-        const conten = document.getElementsByClassName('conten');
-        const list_items = document.getElementsByClassName('item');
-        let indexNode = list_items.length;
-        
-        function moveleft() {
-            
-            for(let i=0;i<list_items.length-1;i++){
-                conten.insertBefore(list_items[indexNode-1], list_items[indexNode]);
-                indexNode--;
-                
-            }
+        const conten = document.querySelector('.conten');
+        const list_items = document.querySelectorAll('.item');
+        let indexNode = list_items.length - 1;
 
-            indexNode = list_items.length - 1;
-            
+        function convertitem(item1, item2) {
+            let copyitemHTML = item1.innerHTML;
+            let copyitemClass = item1.className;
+
+            item1.innerHTML = item2.innerHTML;
+            item1.className = item2.className;
+
+            item2.innerHTML = copyitemHTML;
+            item2.className = copyitemClass;
         }
 
-        function moveright() {
-           
-            indexNode = 0;
-            for(let i=0;i<indexNode-1;i++){
-                conten.insertBefore(list_items[indexNode], list_items[indexNode+1]);
-                indexNode++;
-            }
 
+        function moveLeft() {
+            for(let i = 0;i < list_items.length - 1;i++){
+                convertitem(list_items[indexNode],list_items[indexNode-1])
+                
+                indexNode--;
+            }
+            indexNode = list_items.length - 1;
+        }
+
+        function moveRight() {
+            indexNode = 0;
+            for(let i = 0;i < list_items.length - 1;i++){
+                convertitem(list_items[indexNode],list_items[indexNode+1])
+                indexNode++;     
+            }
             indexNode = list_items.length - 1;
         }
     </script>
-
-
 </body>
 </html>
-
