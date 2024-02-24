@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let listEmail = ['@gmail.com','@yahoo.com','@hotmail.com','@outlook.com','@aol.com','@edu','.gov','.org','.com','.net'];
+    let str = prompt("Nhập Email: ");
+    let escape = '#!{}[]()$%^&*:;<>?/|\\=~` ';
+    
+    let check = 1;
+    for(let i = 0;i<escape.length;i++){
+        if(escape.includes(str[i])){
+            check = 0;
+        }
+    }
+
+    for(let i = 0;i<listEmail.length;i++){
+        if(str.includes(listEmail[i]) && str.length >=15){
+            check = 0;
+        }
+    }
+
+    if(check == 0){
+        alert('Email không hợp lệ!');
+    }
+    else{
+        alert('Email đúng')
+    }
+
+</script>
