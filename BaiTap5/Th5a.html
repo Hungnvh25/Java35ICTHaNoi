@@ -19,18 +19,19 @@
             strDele.push(str[i])
         }
     }
+    console.log(strDele)
     let strCopy = strDele.join("");
-
+    console.log(strCopy)
 
     for(let i =0 ; i<strCopy.length -1 ;i++){
         if(strCopy[i] != ' ' ){
             let itemStr = '';
             for(let y = i ; y < strCopy.length ; y++){
-                i = y;
+                i = y; // cho for ngoai chay tu i
                 if(strCopy[y] == ' '){
                     break;
                 }
-                itemStr+=strCopy[y]
+                itemStr+=strCopy[y];
 
             }
             itemStr = itemStr.slice(0,1).toUpperCase() + itemStr.slice(1).toLowerCase();
@@ -38,10 +39,6 @@
         } 
     }
     
-
-
-
-
     console.log(result)
 </script>
 </html>
