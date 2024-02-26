@@ -3,66 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .group{
-            width: 500px;
-            height: 500px;
-            position: relative;
-            border: 1px solid black;
-            margin: 100px auto;
-        }
-        .box {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            position:absolute;
-            top: 5px;
-            left: 5px;
-            transition: top 2s, left 2s;
-        }
-
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <div class="group">
-        <div class="box"></div>
-    </div>
-</body>
-
-
-<script>
     
-    const box = document.querySelector('.box');
+</body>
+<script>
+    function facto(n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * facto(n - 1);
+        }
+    } 
 
-    function moveTopRight() {
-        box.style.top = '5px';
-        box.style.left = 'calc(100% - 55px)';
-
-        setTimeout(moveBottomRight,2000);
+    function isNguyenTo(number){
+        if(number < 2){
+            return 0;
+        }
+        else if(number == 2){
+            return 1;
+        }
+        else{
+            for(let i = 2; i <= Math.sqrt(number); i++){
+                if(number % i == 0){
+                    return 0;
+                }
+            }
+        }
+        
+        return 1;
     }
 
-    function moveBottomRight() {
-        box.style.top = 'calc(100% - 55px)';
-        box.style.left = 'calc(100% - 55px)';
-
-        setTimeout(moveBottomLeft,2000)
+    var arr = [10,5,2,5,6,7,8,9];
+    function sumArr(arr){
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+        console.log('Tổng mảng : ' + sum);
+        setTimeout(function() {
+            GiaiThua(arr);
+        }, 4000);
     }
 
-    function moveBottomLeft() {
-        box.style.top = 'calc(100% - 55px)';
-        box.style.left = '5px';
+    function GiaiThua(arr){
+        console.log('Giai thừa của các số : ')
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i] + "! = " + facto(arr[i]));
+        }
 
-        setTimeout(moveTopLeft,2000)
+        setTimeout(function() {soNguyenTo(arr)},3000)
     }
 
-    function moveTopLeft() {
-        box.style.top = '5px';
-        box.style.left = '5px';
 
-        setTimeout(moveTopRight,2000)
+    function soNguyenTo(arr){
+        console.log('Các số nguyên tố:');
+        for (let i = 0; i < arr.length; i++) {
+            if(isNguyenTo(arr[i])){
+                console.log(arr[i])
+            }
+        }
+
+        setTimeout(function() {chiaHetCho3(arr)},3000)
     }
 
-    moveTopRight();
+    
+    function chiaHetCho3(arr){
+        console.log('Các số Chia hết cho 3:');
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]%3==0){
+                console.log(arr[i])
+            }
+        }
 
+    }
+
+    setTimeout(function() {sumArr(arr)}, 3000);
 </script>
 </html>

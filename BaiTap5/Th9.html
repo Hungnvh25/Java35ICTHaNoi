@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .group{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position:absolute;
+            top: 5px;
+            left: 5px;
+            transition: top 1s, left 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="group">
+        <div class="box"></div>
+    </div>
+</body>
+
+
+<script>
+    
+    const box = document.querySelector('.box');
+
+    function moveTopRight() {
+        box.style.top = '5px';
+        box.style.left = 'calc(100% - 55px)';
+
+        setTimeout(moveBottomRight,1000);
+    }
+
+    function moveBottomRight() {
+        box.style.top = 'calc(100% - 55px)';
+        box.style.left = 'calc(100% - 55px)';
+
+        setTimeout(moveBottomLeft,1000)
+    }
+
+    function moveBottomLeft() {
+        box.style.top = 'calc(100% - 55px)';
+        box.style.left = '5px';
+
+        setTimeout(moveTopLeft,1000)
+    }
+
+    function moveTopLeft() {
+        box.style.top = '5px';
+        box.style.left = '5px';
+
+        setTimeout(moveTopRight,1000)
+    }
+
+    moveTopRight();
+
+</script>
+</html>

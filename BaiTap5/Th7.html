@@ -8,16 +8,9 @@
 <body>
     
 </body>
-<script>
-    function facto(n) {
-        if (n == 0 || n == 1) {
-            return 1;
-        } else {
-            return n * facto(n - 1);
-        }
-    } 
 
-    function isNguyenTo(number){
+<script>
+    function soNguyenTo(number){
         if(number < 2){
             return 0;
         }
@@ -35,50 +28,18 @@
         return 1;
     }
 
-    var arr = [10,5,2,5,6,7,8,9];
-    function sumArr(arr){
-        let sum = 0;
-        for(let i = 0; i < arr.length; i++){
-            sum += arr[i];
+
+    function isSoNguyenTo(){
+        let number = Math.floor(Math.random() * 100)+1;
+        
+        if(soNguyenTo(number)){
+            console.log('Số '+ number + ' là số nguyên tố')
         }
-        console.log('Tổng mảng : ' + sum);
-        setTimeout(function() {
-            GiaiThua(arr);
-        }, 4000);
+        else{
+            console.log('Số '+ number + ' không là số nguyên tố')
+        }
     }
 
-    function GiaiThua(arr){
-        console.log('Giai thừa của các số : ')
-        for (let i = 0; i < arr.length; i++) {
-            console.log(arr[i] + "! = " + facto(arr[i]));
-        }
-
-        setTimeout(function() {soNguyenTo(arr)},3000)
-    }
-
-
-    function soNguyenTo(arr){
-        console.log('Các số nguyên tố:');
-        for (let i = 0; i < arr.length; i++) {
-            if(isNguyenTo(arr[i])){
-                console.log(arr[i])
-            }
-        }
-
-        setTimeout(function() {chiaHetCho3(arr)},3000)
-    }
-
-    
-    function chiaHetCho3(arr){
-        console.log('Các số Chia hết cho 3:');
-        for (let i = 0; i < arr.length; i++) {
-            if(arr[i]%3==0){
-                console.log(arr[i])
-            }
-        }
-
-    }
-
-    setTimeout(function() {sumArr(arr)}, 3000);
+    setInterval(isSoNguyenTo,2000)
 </script>
 </html>
