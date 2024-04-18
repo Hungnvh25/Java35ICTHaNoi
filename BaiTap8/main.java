@@ -28,8 +28,8 @@ public class main {
 
             if (check != -1) {
                 System.out.print("welcome 1, Rút tiền -> nhập số tiền: ");
-                float moeny = s.nextFloat();
-                if (atms[i].checkMony(moeny)) {
+                float money = s.nextFloat();
+                if (atms[i].checkMoney(money)) {
                     System.out.println("gud bye , see you later");
                     break;
                 } else {

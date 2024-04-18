@@ -9,14 +9,13 @@ public class user {
 
     private  float money;
 
+
     public user(int id, String name, String pass, float money) {
         this.id = id;
         this.name = name;
         this.pass = pass;
         this.money = money;
     }
-
-
 
     public int getId() {
         return id;
